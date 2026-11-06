@@ -40,6 +40,13 @@ let
           Note: `nix flake check` is only aware of the `description` attribute in `meta`.
         '';
       };
+      passthru = mkOption {
+        type = types.attrsOf types.anything;
+        default = { };
+        description = ''
+          Passthru metadata used for example by gradient CI for exec jobs.
+        '';
+      };
     };
   };
 in
